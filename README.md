@@ -6,6 +6,12 @@ The model was trained on the popular Cats vs Dogs dataset downloaded from Kaggle
 
 ---
 
+# Problem Statement
+
+Develop a CNN-based image classification model that can accurately distinguish between cat and dog images.
+
+---
+
 # Project Overview
 
 The project demonstrates an end-to-end deep learning workflow including:
@@ -21,54 +27,49 @@ The project demonstrates an end-to-end deep learning workflow including:
 
 ---
 
-# Problem Statement
-
-Develop a CNN-based image classification model that can distinguish between cat and dog images with high accuracy.
-
----
-
 # Dataset
 
-**Source:** [Kaggle Dataset](https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset)
+Dataset Source: [Kaggle Dataset](https://www.kaggle.com/datasets/bhavikjikadara/dog-and-cat-classification-dataset)
 
-**Details:**
+Dataset Details:
 - Total Images: 24,998
 - Classes:
-  - Cat: 12,499
-  - Dog: 12,499
-- Balanced dataset with equal number of images in both classes
+  - Cat
+  - Dog
+- Balanced dataset with nearly equal number of images in both classes
 
-**Structure:**
+Dataset Structure:
 
 ```text
 PetImages/
 │
 ├── Cat/
 ├── Dog/
+```
 
 ---
 
-**# Technologies Used**
+# Technologies Used
 
 - Python
 - PyTorch
 - Torchvision
 - Scikit-learn
-- NumPy
+- - NumPy
 - Matplotlib
 
 ---
 
-**# Data Preprocessing & Augmentation**
+# Data Preprocessing & Augmentation
 
-**Training Transformations**
+## Training Transformations
 - Resize images to 150×150
 - Random Horizontal Flip
 - Random Rotation (±10°)
 - Convert images to tensors
 - Normalize pixel values
 
-**Validation/Test Transformations**
+## Validation/Test Transformations
 - Resize images to 150×150
 - Convert images to tensors
 - Normalize pixel values
@@ -77,9 +78,9 @@ Data augmentation was applied to improve model generalization and reduce overfit
 
 ---
 
-**# CNN Architecture**
+# CNN Architecture
 
-**The custom CNN architecture consists of:**
+The custom CNN architecture consists of:
 
 - 3 Convolutional Blocks
 - Batch Normalization
@@ -91,6 +92,7 @@ Data augmentation was applied to improve model generalization and reduce overfit
 
 **Architecture Flow:**
 
+```text
 Input Image
    ↓
 Conv2D → BatchNorm → ReLU → MaxPool
@@ -106,10 +108,11 @@ Fully Connected Layer
 Dropout
    ↓
 Output Layer (Cat / Dog)
+```
 
 ---
 
-**# Training Details**
+# Training Details
 
 - Loss Function: CrossEntropyLoss
 - Optimizer: Adam
@@ -122,18 +125,19 @@ The best-performing model was saved using model checkpointing.
 
 ---
 
-**# Model Performance**
+# Model Performance
 
-**Best Validation Accuracy**
+## Best Validation Accuracy
 90.58%
 
-**Final Test Accuracy**
+## Final Test Accuracy
 90.66%
 
 ---
 
-**# Classification Report**
+# Classification Report
 
+```text
               precision    recall    f1-score    support
 
 Cat              0.91       0.91       0.91       2506
@@ -142,18 +146,29 @@ Dog              0.91       0.91       0.91       2495
 accuracy                                0.91       5001
 macro avg         0.91       0.91       0.91       5001
 weighted avg      0.91       0.91       0.91       5001
+```
 
 ---
 
-**# Training Visualization**
+# Training Visualization
 
 The training and validation loss curves were plotted to monitor learning behavior and detect overfitting during training.
 
-<img width="872" height="612" alt="image" src="https://github.com/user-attachments/assets/aaa7b243-ea62-467d-971e-c2d81831cafc" />
+<img width="900" height="607" alt="image" src="https://github.com/user-attachments/assets/8c52ac69-f94b-4629-a86c-7cbbb3f24c22" />
 
 ---
 
-**# Key Highlights**
+# Key Learnings
+
+- CNN architecture design
+- Data augmentation techniques
+- Overfitting prevention using dropout and early stopping
+- Model evaluation using classification metrics
+- PyTorch training workflow
+
+---
+
+# Key Highlights
 
 - Built a custom CNN architecture from scratch
 - Applied data augmentation techniques
@@ -164,7 +179,7 @@ The training and validation loss curves were plotted to monitor learning behavio
 
 ---
 
-**# Conclusion**
+# Conclusion
 
 This project demonstrates a complete deep learning pipeline for binary image classification using CNNs in PyTorch.
 
@@ -173,7 +188,6 @@ The model achieved strong and balanced performance on unseen test data while mai
 ---
 
 **# Contact**
-
 Feel free to connect for discussions, suggestions, or collaboration.
 
 Email: gourikundu1808@gmail.com LinkedIn: www.linkedin.com/in/gouri-kundu
